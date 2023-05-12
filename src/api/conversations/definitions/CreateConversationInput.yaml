@@ -1,0 +1,12 @@
+definitions:
+  CreateConversationInput:
+    type: 'object'
+    required:
+      - 'nftCharacterId'
+      - 'query'
+    properties:
+      nftCharacterId:
+        type: 'string'
+        format: 'objectId'
+      query:
+        type: 'string'

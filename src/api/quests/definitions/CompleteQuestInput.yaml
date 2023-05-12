@@ -1,0 +1,7 @@
+definitions:
+  CompleteQuestInput:
+    type: 'object'
+    required: []
+    properties:
+      accomplishments:
+        type: 'array'

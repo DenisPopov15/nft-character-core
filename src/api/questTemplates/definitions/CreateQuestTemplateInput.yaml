@@ -1,0 +1,17 @@
+definitions:
+  CreateQuestTemplateInput:
+    type: 'object'
+    required:
+      - 'title'
+      - 'description'
+      - 'tasks'
+      - 'type'
+    properties:
+      title:
+        type: 'string'
+      description:
+        type: 'string'
+      tasks:
+        type: 'array'
+      type:
+        type: 'string'

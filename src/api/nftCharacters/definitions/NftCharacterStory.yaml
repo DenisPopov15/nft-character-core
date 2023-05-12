@@ -1,0 +1,14 @@
+definitions:
+  NftCharacterStory:
+    type: 'object'
+    required:
+      - 'story'
+      - 'nftCollectionAddress'
+      - 'nftId'
+      - 'createdBy'
+    properties:
+      story:
+        type: 'string'
+        description: 'Chacrater story.'
+        example: ''
+        default: ''

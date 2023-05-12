@@ -1,0 +1,17 @@
+/indexMyNftCharacters:
+  get:
+    tags:
+      - 'NftCharacters'
+    operationId: 'indexMyNftCharacters'
+    summary: 'NFT Owner can pull his NFT charcaters.'
+    description: 'NFT Owner can pull his NFT charcaters.'
+    parameters: []
+    responses:
+      200:
+        description: 'OK'
+        schema:
+          type: 'array'
+          items:
+            $ref: '#/definitions/NftCharacter'
+    security:
+      - authenticationToken: []

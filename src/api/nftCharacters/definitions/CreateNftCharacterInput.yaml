@@ -1,0 +1,24 @@
+definitions:
+  CreateNftCharacterInput:
+    type: 'object'
+    required:
+      - 'nftCollectionAddress'
+      - 'nftId'
+      - 'story'
+      # - 'name'
+      # - 'avatarUrl'
+    properties:
+      nftCollectionAddress:
+        type: 'string'
+        format: 'ethereumAddress'
+      nftId:
+        type: 'string'
+      name:
+        type: 'string'
+      story:
+        type: 'string'
+      avatarUrl:
+        type: 'string'
+        format: 'url'
+      characteristics:
+        type: 'string'

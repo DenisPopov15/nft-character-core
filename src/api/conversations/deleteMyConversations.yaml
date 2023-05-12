@@ -1,0 +1,16 @@
+/deleteMyConversations:
+  delete:
+    tags:
+      - 'Conversations'
+    operationId: 'deleteMyConversations'
+    summary: 'NFT Owner can delete his conversations with his NFT charcater.'
+    description: 'NFT Owner can delete his conversations with his NFT charcater.'
+    parameters:
+      - in: 'query'
+        name: 'nftCharacterId'
+        required: true
+    responses:
+      204:
+        description: 'No Content'
+    security:
+      - authenticationToken: []

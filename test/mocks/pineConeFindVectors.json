@@ -1,0 +1,38 @@
+{
+    "results":
+    [],
+    "matches":
+    [
+        {
+            "id": "vec1",
+            "score": 1,
+            "values":
+            [
+                0.1,
+                0.2,
+                0.3,
+                0.4
+            ],
+            "metadata":
+            {
+                "genre": "drama"
+            }
+        },
+        {
+            "id": "vec2",
+            "score": 0.993808031,
+            "values":
+            [
+                0.2,
+                0.3,
+                0.4,
+                0.5
+            ],
+            "metadata":
+            {
+                "genre": "action"
+            }
+        }
+    ],
+    "namespace": "test-wow-namespace"
+}

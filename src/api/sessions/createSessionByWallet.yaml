@@ -1,0 +1,24 @@
+/createSessionByWallet:
+  post:
+    tags: [Sessions]
+    operationId: createSessionByWallet
+    summary: >-
+      Create session using wallet.
+    description: >-
+      Create session using wallet as authentication credentials.
+
+    parameters:
+      -
+        in:       body
+        name:     parameters
+        required: true
+        schema:
+          $ref: "#/definitions/WalletCredentials"
+        description: >-
+          User email credentials.
+
+    responses:
+      201:
+        description: Created
+        schema:
+          $ref: "#/definitions/SessionToken"

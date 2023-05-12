@@ -1,0 +1,36 @@
+errors:
+  NCC-1:
+    type: InvalidParametersError
+    message: >-
+      You do not have enough permissions.
+    httpStatusCode: 401
+  NCC-2:
+    type: InvalidParametersError
+    message: >-
+      You should own at least one NFT from collection.
+    httpStatusCode: 401
+  NCC-3:
+    type: InvalidParametersError
+    message: >-
+      Signature not valid.
+    httpStatusCode: 400
+  NCC-4:
+    type: InvalidParametersError
+    message: >-
+      Invalid Payload.
+    httpStatusCode: 400
+  NCC-5:
+    type: InvalidParametersError
+    message: >-
+      Signature expires.
+    httpStatusCode: 400
+  NCC-6:
+    type: InvalidParametersError
+    message: >-
+      Some records does not exists.
+    httpStatusCode: 400
+  NCC-7:
+    type: InvalidParametersError
+    message: >-
+      Record already exists.
+    httpStatusCode: 400

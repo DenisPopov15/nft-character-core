@@ -1,0 +1,13 @@
+definitions:
+  CreateQuestInput:
+    type: 'object'
+    required:
+      - 'nftCharacterId'
+      - 'questTemplateId'
+    properties:
+      nftCharacterId:
+        type: 'string'
+        format: 'objectId'
+      questTemplateId:
+        type: 'string'
+        format: 'objectId'

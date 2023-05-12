@@ -1,0 +1,54 @@
+definitions:
+  NftCharacter:
+    type: 'object'
+    required:
+      - 'name'
+      - 'nftCollectionAddress'
+      - 'nftId'
+      - 'createdBy'
+    properties:
+      name:
+        type: 'string'
+        description: 'Chacrater name.'
+        example: ''
+        default: ''
+      nftCollectionAddress:
+        type: 'string'
+        format: 'ethereumAddress'
+        description: 'NFT collection smart contract address.'
+        example: ''
+        default: ''
+      nftId:
+        type: 'string'
+        description: 'NFT ID/number from collection.'
+        example: ''
+        default: ''
+      story:
+        type: 'string'
+        description: 'Character story.'
+        example: ''
+        default: ''
+      characteristics:
+        type: 'string'
+        description: 'Character emotional/background setup.'
+        example: ''
+        default: ''
+      avatarUrl:
+        type: 'string'
+        format: 'url'
+        description: 'Url of the character avatar'
+        example: 'https://example.com/avatar.jpg'
+      createdBy:
+        type: 'string'
+        description: 'address of user who created entity.'
+        example: ''
+        default: ''
+      id:
+        type: 'string'
+        format: 'objectId'
+      createdAt:
+        type: 'string'
+        format: 'date-time'
+      updatedAt:
+        type: 'string'
+        format: 'date-time'

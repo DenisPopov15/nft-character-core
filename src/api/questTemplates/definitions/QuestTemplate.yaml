@@ -1,0 +1,42 @@
+definitions:
+  QuestTemplate:
+    type: 'object'
+    required:
+      - 'title'
+      - 'description'
+      - 'createdBy'
+    properties:
+      title:
+        type: 'string'
+        description: 'Title of quest template.'
+        example: ''
+        default: ''
+      description:
+        type: 'string'
+        description: 'Description of quest template.'
+        example: ''
+        default: ''
+      tasks:
+        type: 'array'
+        items:
+          type: 'string'
+      type:
+        type: 'string'
+        enum:
+          - 'quiz'
+        description: ''
+        example: 'quiz'
+      createdBy:
+        type: 'string'
+        description: 'address of user who created entity.'
+        example: ''
+        default: ''
+      id:
+        type: 'string'
+        format: 'objectId'
+      createdAt:
+        type: 'string'
+        format: 'date-time'
+      updatedAt:
+        type: 'string'
+        format: 'date-time'

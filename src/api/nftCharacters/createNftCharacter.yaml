@@ -1,0 +1,20 @@
+/createNftCharacter:
+  post:
+    tags:
+      - 'NftCharacters'
+    operationId: 'createNftCharacter'
+    summary: 'NFT Owner creates the charcater for his NFT.'
+    description: 'NFT Owner creates the charcater for his NFT.'
+    parameters:
+      - in: 'body'
+        name: 'parameters'
+        required: true
+        schema:
+          $ref: '#/definitions/CreateNftCharacterInput'
+    responses:
+      201:
+        description: 'Created'
+        schema:
+          $ref: '#/definitions/NftCharacter'
+    security:
+      - authenticationToken: []

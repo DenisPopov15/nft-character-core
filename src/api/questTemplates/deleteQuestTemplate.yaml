@@ -1,0 +1,16 @@
+/deleteQuestTemplate:
+  delete:
+    tags:
+      - 'QuestTemplates'
+    operationId: 'deleteQuestTemplate'
+    summary: 'Admin can delete quest template.'
+    description: 'Admin can delete quest template.'
+    parameters:
+      - in: 'query'
+        name: 'id'
+        required: true
+    responses:
+      204:
+        description: 'No Content'
+    security:
+      - authenticationToken: []

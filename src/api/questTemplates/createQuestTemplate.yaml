@@ -1,0 +1,20 @@
+/createQuestTemplate:
+  post:
+    tags:
+      - 'QuestTemplates'
+    operationId: 'createQuestTemplate'
+    summary: 'Admnin can create quest templates to be proposed for users to complete.'
+    description: 'Admnin can create quest templates to be proposed for users to complete.'
+    parameters:
+      - in: 'body'
+        name: 'parameters'
+        required: true
+        schema:
+          $ref: '#/definitions/CreateQuestTemplateInput'
+    responses:
+      201:
+        description: 'Created'
+        schema:
+          $ref: '#/definitions/QuestTemplate'
+    security:
+      - authenticationToken: []

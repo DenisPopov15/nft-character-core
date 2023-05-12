@@ -1,0 +1,44 @@
+definitions:
+  Conversation:
+    type: 'object'
+    required:
+      - 'nftCharacterId'
+      - 'query'
+      - 'response'
+      - 'createdBy'
+    properties:
+      nftCharacterId:
+        type: 'string'
+        format: 'objectId'
+        description: 'Chacrater scope.'
+        example: ''
+        default: ''
+      query:
+        type: 'string'
+        description: 'User query.'
+        example: ''
+        default: ''
+      response:
+        type: 'string'
+        description: 'Character response.'
+        example: ''
+        default: ''
+      sessionId:
+        type: 'string'
+        description: 'Grouping by the session scope.'
+        example: ''
+        default: ''
+      createdBy:
+        type: 'string'
+        description: 'address of user who created entity.'
+        example: ''
+        default: ''
+      id:
+        type: 'string'
+        format: 'objectId'
+      createdAt:
+        type: 'string'
+        format: 'date-time'
+      updatedAt:
+        type: 'string'
+        format: 'date-time'

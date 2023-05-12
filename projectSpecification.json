@@ -1,0 +1,317 @@
+{
+  "license": "ISC",
+  "author": "Denys Popov",
+  "description": "NFT Character core backend service",
+  "api": {
+    "schemas": {},
+    "documents": {
+      "nftCharacter": {
+        "name": {
+          "type": "string",
+          "description": "Chacrater name.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "nftCollectionAddress": {
+          "type": "string",
+          "format": "ethereumAddress",
+          "description": "NFT collection smart contract address.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "nftId": {
+          "type": "string",
+          "description": "NFT ID/number from collection.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "story": {
+          "type": "string",
+          "description": "Character story.",
+          "example": "",
+          "default": "",
+          "isRequired": false
+        },
+        "characteristics": {
+          "type": "string",
+          "description": "Character emotional/background setup.",
+          "example": "",
+          "default": "",
+          "isRequired": false
+        },
+        "avatarUrl": {
+          "type": "string",
+          "format": "url",
+          "description": "Url of the character avatar",
+          "example": "https://example.com/avatar.jpg"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "address of user who created entity.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        }
+      },
+      "conversation": {
+        "nftCharacterId": {
+          "type": "string",
+          "format": "objectId",
+          "description": "Chacrater scope.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "query": {
+          "type": "string",
+          "description": "User query.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "response": {
+          "type": "string",
+          "description": "Character response.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "sessionId": {
+          "type": "string",
+          "description": "Grouping by the session scope.",
+          "example": "",
+          "default": ""
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "address of user who created entity.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        }
+      },
+      "quest": {
+        "nftCharacterId": {
+          "type": "string",
+          "format": "objectId",
+          "description": "Chacrater scope.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "questTemplateId": {
+          "type": "string",
+          "format": "objectId",
+          "description": "Template scope.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of quest.",
+          "example": "",
+          "default": ""
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of quest.",
+          "example": "",
+          "default": ""
+        },
+        "tasks": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "accomplishments": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "progressDetails": {
+          "type": "string",
+          "description": "Pasing quest notes.",
+          "example": "",
+          "default": ""
+        },
+        "sessionId": {
+          "type": "string",
+          "description": "Grouping by the session scope.",
+          "example": "",
+          "default": ""
+        },
+        "type": {
+          "type": "string",
+          "enum": ["quiz"],
+          "description": "",
+          "example": "quiz",
+          "isRequired": true
+        },
+        "state": {
+          "type": "string",
+          "enum": ["pending", "inPorgress", "completed", "declined"],
+          "description": "",
+          "example": "pending",
+          "isRequired": true
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "address of user who created entity.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        }
+      },
+      "questTemplate": {
+        "title": {
+          "type": "string",
+          "description": "Title of quest template.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of quest template.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        },
+        "tasks": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "type": {
+          "type": "string",
+          "enum": ["quiz"],
+          "description": "",
+          "example": "quiz"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "address of user who created entity.",
+          "example": "",
+          "default": "",
+          "isRequired": true
+        }
+      }
+    },
+    "operations": {
+      "nftCharacter": {
+        "createNftCharacterStory": {
+          "description": "NFT Owner generate story for his NFT charcater.",
+          "type": "post",
+          "params": {
+            "nftCollectionAddress": { "isRequired": true },
+            "nftId": { "isRequired": true }
+          }
+        },
+        "createNftCharacter": {
+          "description": "NFT Owner creates the charcater for his NFT.",
+          "type": "post",
+          "params": {
+            "nftCollectionAddress": { "isRequired": true },
+            "nftId": { "isRequired": true },
+            "name": { "isRequired": true },
+            "story": { "isRequired": true },
+            "avatarUrl": { "isRequired": true },
+            "characteristics": { "isRequired": false }
+          }
+        },
+        "indexMyNftCharacters": {
+          "description": "NFT Owner can pull his NFT charcaters.",
+          "type": "get",
+          "params": {}
+        }
+      },
+      "conversation": {
+        "createConversation": {
+          "description": "NFT Owner can talk with his NFT charcater.",
+          "type": "post",
+          "params": {
+            "nftCharacterId": { "isRequired": true },
+            "query": { "isRequired": true }
+          }
+        },
+        "indexMyConversations": {
+          "description": "NFT Owner can pull his conversations with his NFT charcaters.",
+          "type": "get",
+          "params": {
+            "nftCharacterId": { "isRequired": false },
+            "sessionId": { "isRequired": false }
+          }
+        },
+        "deleteMyConversations": {
+          "description": "NFT Owner can delete his conversations with his NFT charcater.",
+          "type": "delete",
+          "params": {
+            "nftCharacterId": { "isRequired": true }
+          }
+        }
+      },
+      "quest": {
+        "createQuest": {
+          "description": "NFT Owner can start/create his character quest.",
+          "type": "post",
+          "params": {
+            "nftCharacterId": { "isRequired": true },
+            "questTemplateId": { "isRequired": true }
+          }
+        },
+        "completeQuest": {
+          "description": "NFT Owner proceed/complete quest.",
+          "type": "put",
+          "params": {
+            "id": { "isRequired": true },
+            "accomplishments": { "isRequired": false }
+          }
+        },
+        "indexMyQuests": {
+          "description": "NFT Owner can pull his characters quests.",
+          "type": "get",
+          "params": {
+            "nftCharacterId": { "isRequired": false },
+            "sessionId": { "isRequired": false },
+            "type": { "isRequired": false },
+            "state": { "isRequired": false }
+          }
+        },
+        "declineQuest": {
+          "description": "NFT Owner can decline current quest.",
+          "type": "put",
+          "params": {
+            "id": { "isRequired": true }
+          }
+        }
+      },
+      "questTemplate": {
+        "createQuestTemplate": {
+          "description": "Admnin can create quest templates to be proposed for users to complete.",
+          "type": "post",
+          "params": {
+            "title": { "isRequired": true },
+            "description": { "isRequired": true },
+            "tasks": { "isRequired": true },
+            "type": { "isRequired": true }
+          }
+        },
+        "indexQuestTemplates": {
+          "description": "Everybody could pull quest template.",
+          "type": "get",
+          "params": {
+            "type": { "isRequired": false }
+          }
+        },
+        "deleteQuestTemplate": {
+          "description": "Admin can delete quest template.",
+          "type": "delete",
+          "params": {
+            "id": { "isRequired": true }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+/createQuest:
+  post:
+    tags:
+      - 'Quests'
+    operationId: 'createQuest'
+    summary: 'NFT Owner can start/create his character quest.'
+    description: 'NFT Owner can start/create his character quest.'
+    parameters:
+      - in: 'body'
+        name: 'parameters'
+        required: true
+        schema:
+          $ref: '#/definitions/CreateQuestInput'
+    responses:
+      201:
+        description: 'Created'
+        schema:
+          $ref: '#/definitions/Quest'
+    security:
+      - authenticationToken: []

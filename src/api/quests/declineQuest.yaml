@@ -1,0 +1,18 @@
+/declineQuest:
+  put:
+    tags:
+      - 'Quests'
+    operationId: 'declineQuest'
+    summary: 'NFT Owner can decline current quest.'
+    description: 'NFT Owner can decline current quest.'
+    parameters:
+      - in: 'query'
+        name: 'id'
+        required: true
+    responses:
+      200:
+        description: 'OK'
+        schema:
+          $ref: '#/definitions/Quest'
+    security:
+      - authenticationToken: []

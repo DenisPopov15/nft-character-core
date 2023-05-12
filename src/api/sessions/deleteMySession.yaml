@@ -1,0 +1,16 @@
+/deleteMySession:
+  delete:
+    tags: [Sessions]
+    operationId: deleteMySession
+
+    summary: >-
+      Delete users current session.
+    description: >-
+      Deletes users current session and invalidates his authorization token.
+
+    responses:
+      204:
+        description: OK
+
+    security:
+      - authenticationToken: []

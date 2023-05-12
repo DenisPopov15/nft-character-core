@@ -1,0 +1,16 @@
+definitions:
+  SessionToken:
+    type: object
+
+    properties:
+      token:
+        type:   string
+        description: >-
+          User auth session token.
+
+      nfts:
+        type: 'array'
+        items:
+          $ref: '#/definitions/NFTMetadata'
+        description: >-
+          User auth session token.

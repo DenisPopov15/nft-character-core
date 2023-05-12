@@ -1,0 +1,23 @@
+/indexMyConversations:
+  get:
+    tags:
+      - 'Conversations'
+    operationId: 'indexMyConversations'
+    summary: 'NFT Owner can pull his conversations with his NFT charcaters.'
+    description: 'NFT Owner can pull his conversations with his NFT charcaters.'
+    parameters:
+      - in: 'query'
+        name: 'nftCharacterId'
+        required: false
+      - in: 'query'
+        name: 'sessionId'
+        required: false
+    responses:
+      200:
+        description: 'OK'
+        schema:
+          type: 'array'
+          items:
+            $ref: '#/definitions/Conversation'
+    security:
+      - authenticationToken: []

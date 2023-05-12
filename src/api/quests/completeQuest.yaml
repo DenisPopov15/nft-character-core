@@ -1,0 +1,23 @@
+/completeQuest:
+  put:
+    tags:
+      - 'Quests'
+    operationId: 'completeQuest'
+    summary: 'NFT Owner proceed/complete quest.'
+    description: 'NFT Owner proceed/complete quest.'
+    parameters:
+      - in: 'query'
+        name: 'id'
+        required: true
+      - in: 'body'
+        name: 'parameters'
+        required: true
+        schema:
+          $ref: '#/definitions/CompleteQuestInput'
+    responses:
+      200:
+        description: 'OK'
+        schema:
+          $ref: '#/definitions/Quest'
+    security:
+      - authenticationToken: []

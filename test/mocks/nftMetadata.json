@@ -1,0 +1,49 @@
+{
+    "name": "Woman #1",
+    "description": "World of Women: 10,000 unique, cool and diverse Women living on the Blockchain.",
+    "image": "ipfs://QmSdv72GwEDFoCspXJN7Bki9UzDyTsmbAd8zoRtMHjW3qT",
+    "external_link": "https://worldofwomen.art",
+    "attributes":
+    [
+        {
+            "value": "Pink Pastel",
+            "trait_type": "Background"
+        },
+        {
+            "value": "Light Warm Yellow",
+            "trait_type": "Skin Tone"
+        },
+        {
+            "value": "Yellow To The Right",
+            "trait_type": "Eyes"
+        },
+        {
+            "value": "Sunset",
+            "trait_type": "Facial Features"
+        },
+        {
+            "value": "Bob",
+            "trait_type": "Hairstyle"
+        },
+        {
+            "value": "Red Round Sunglasses",
+            "trait_type": "Face Accessories"
+        },
+        {
+            "value": "Futuristic Dress",
+            "trait_type": "Clothes"
+        },
+        {
+            "value": "Lightning Bolts",
+            "trait_type": "Earrings"
+        },
+        {
+            "value": "Slighly Open",
+            "trait_type": "Mouth"
+        },
+        {
+            "value": "Passion Red",
+            "trait_type": "Lips Color"
+        }
+    ]
+}

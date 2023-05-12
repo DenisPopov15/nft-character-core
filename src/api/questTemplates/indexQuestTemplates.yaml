@@ -1,0 +1,20 @@
+/indexQuestTemplates:
+  get:
+    tags:
+      - 'QuestTemplates'
+    operationId: 'indexQuestTemplates'
+    summary: 'Everybody could pull quest template.'
+    description: 'Everybody could pull quest template.'
+    parameters:
+      - in: 'query'
+        name: 'type'
+        required: false
+    responses:
+      200:
+        description: 'OK'
+        schema:
+          type: 'array'
+          items:
+            $ref: '#/definitions/QuestTemplate'
+    security:
+      - authenticationToken: []

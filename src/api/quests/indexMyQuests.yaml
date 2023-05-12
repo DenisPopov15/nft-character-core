@@ -1,0 +1,29 @@
+/indexMyQuests:
+  get:
+    tags:
+      - 'Quests'
+    operationId: 'indexMyQuests'
+    summary: 'NFT Owner can pull his characters quests.'
+    description: 'NFT Owner can pull his characters quests.'
+    parameters:
+      - in: 'query'
+        name: 'nftCharacterId'
+        required: false
+      - in: 'query'
+        name: 'sessionId'
+        required: false
+      - in: 'query'
+        name: 'type'
+        required: false
+      - in: 'query'
+        name: 'state'
+        required: false
+    responses:
+      200:
+        description: 'OK'
+        schema:
+          type: 'array'
+          items:
+            $ref: '#/definitions/Quest'
+    security:
+      - authenticationToken: []

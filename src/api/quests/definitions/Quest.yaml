@@ -1,0 +1,79 @@
+definitions:
+  Quest:
+    type: 'object'
+    required:
+      - 'nftCharacterId'
+      - 'questTemplateId'
+      - 'type'
+      - 'state'
+      - 'createdBy'
+    properties:
+      nftCharacterId:
+        type: 'string'
+        format: 'objectId'
+        description: 'Chacrater scope.'
+        example: ''
+        default: ''
+      questTemplateId:
+        type: 'string'
+        format: 'objectId'
+        description: 'Template scope.'
+        example: ''
+        default: ''
+      title:
+        type: 'string'
+        description: 'Title of quest.'
+        example: ''
+        default: ''
+      description:
+        type: 'string'
+        description: 'Description of quest.'
+        example: ''
+        default: ''
+      tasks:
+        type: 'array'
+        items:
+          type: 'string'
+      accomplishments:
+        type: 'array'
+        items:
+          type: 'string'
+      progressDetails:
+        type: 'string'
+        description: 'Pasing quest notes.'
+        example: ''
+        default: ''
+      sessionId:
+        type: 'string'
+        description: 'Grouping by the session scope.'
+        example: ''
+        default: ''
+      type:
+        type: 'string'
+        enum:
+          - 'quiz'
+        description: ''
+        example: 'quiz'
+      state:
+        type: 'string'
+        enum:
+          - 'pending'
+          - 'inPorgress'
+          - 'completed'
+          - 'declined'
+        description: ''
+        example: 'pending'
+      createdBy:
+        type: 'string'
+        description: 'address of user who created entity.'
+        example: ''
+        default: ''
+      id:
+        type: 'string'
+        format: 'objectId'
+      createdAt:
+        type: 'string'
+        format: 'date-time'
+      updatedAt:
+        type: 'string'
+        format: 'date-time'

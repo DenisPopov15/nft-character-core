@@ -1,0 +1,48 @@
+{
+  "name": "nft-character-core",
+  "version": "1.0.0",
+  "description": "NFT Character core backend service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "NODE_ENV=dev node index.js",
+    "test": "eslint src/ test/ && NODE_ENV=test npm run drop && NODE_ENV=test nyc --reporter=lcov --reporter=text _mocha --exit --timeout 15000",
+    "test:only": "NODE_ENV=test npm run drop && NODE_ENV=test nyc --reporter=lcov --reporter=text _mocha --exit --timeout 15000",
+    "drop": "",
+    "infrasetup": "docker-compose -f docker-compose-local.yml up -d --no-deps mongo",
+    "generate": "projectGenerator backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenisPopov15/nft-character-core.git"
+  },
+  "author": "Denys Popov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenisPopov15/nft-character-core/issues"
+  },
+  "homepage": "https://github.com/DenisPopov15/nft-character-core#readme",
+  "dependencies": {
+    "@pinecone-database/pinecone": "^0.0.9",
+    "common-backend-js": "0.1.11",
+    "dotenv": "^4.0.0",
+    "ethers": "^5.5.4",
+    "openai": "^3.1.0",
+    "langchain": "^0.0.11",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.uppercase": "^4.3.0",
+    "mongoose": "^6.4.3",
+    "node-fetch": "2.6.7",
+    "non-fungible-token-abi": "^1.0.1",
+    "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "factory-girl": "^5.0.4",
+    "faker": "^5.5.3",
+    "mocha": "^9.1.4",
+    "nyc": "^15.1.0",
+    "supertest": "^6.2.2"
+  }
+}
