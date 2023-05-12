@@ -1,0 +1,26 @@
+/buildNftCharacterCharacteristics:
+  get:
+    tags:
+      - 'NftCharacters'
+    operationId: buildNftCharacterCharacteristics
+    parameters:
+      -
+        name: nftCollectionAddress
+        type: string
+        format: ethereumAddress
+        in: query
+        required: true
+      -
+        name: nftId
+        type: string
+        in: query
+        required: true
+
+    responses:
+      200:
+        description: OK
+        schema:
+          $ref: "#/definitions/Characteristics"
+
+    security:
+      - authenticationToken: []

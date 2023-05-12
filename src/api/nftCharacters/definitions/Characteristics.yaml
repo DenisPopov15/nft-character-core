@@ -1,0 +1,22 @@
+definitions:
+  Characteristics:
+    type: 'object'
+    required:
+      - 'characteristics'
+    properties:
+      nftCollectionAddress:
+        type: 'string'
+        format: 'ethereumAddress'
+        description: 'NFT collection smart contract address.'
+        example: ''
+        default: ''
+      nftId:
+        type: 'string'
+        description: 'NFT ID/number from collection.'
+        example: ''
+        default: ''
+      characteristics:
+        type: 'string'
+        description: 'Character emotional/background setup.'
+        example: ''
+        default: ''

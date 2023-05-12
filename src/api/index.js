@@ -1,5 +1,6 @@
 'use strict'
 
+const buildNftCharacterCharacteristics = require('./nftCharacters/buildNftCharacterCharacteristics')
 const createNftCharacterStory = require('./nftCharacters/createNftCharacterStory')
 const createNftCharacter = require('./nftCharacters/createNftCharacter')
 const indexMyNftCharacters = require('./nftCharacters/indexMyNftCharacters')
@@ -21,6 +22,7 @@ const createSessionByWallet = require('./sessions/createSessionByWallet')
 const deleteMySession = require('./sessions/deleteMySession')
 
 module.exports = {
+  buildNftCharacterCharacteristics,
   createNftCharacterStory,
   createNftCharacter,
   indexMyNftCharacters,
