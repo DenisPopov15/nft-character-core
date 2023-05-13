@@ -15,3 +15,13 @@ definitions:
 
       metadata:
         $ref: "#/definitions/NFTMetadata"
+
+      isCharacterExists:
+        type: boolean
+        description: >-
+          Is nftCharacter already exists for this NFT.
+
+      nftCharacterId:
+        type: string
+        description: >-
+          NFT characterId.

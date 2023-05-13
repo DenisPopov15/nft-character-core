@@ -3,6 +3,7 @@
 const { Create } = require('common-backend-js').operations
 const { ethers } = require('ethers')
 const { uuid } = require('uuidv4')
+const keyBy = require('lodash.keyby')
 
 const createAuth     = require('../../helpers/createAuth')
 const OperationError = require('../../OperationError')
@@ -59,10 +60,25 @@ class CreateSessionByWallet extends Create {
 
     const nfts = await this._validateIfAddressOwnTokens(walletAddress, nftCollectionAddress)
     const parsedNfts = []
+
+    const nftIds = nfts.map(n => { return n.id })
+    const nftCharacters = await this.Model('NftCharacter').find({ nftCollectionAddress, nftId: { $in: nftIds } })
+    const nftCharactersMap = keyBy(nftCharacters, 'nftId')
+
     const nftCharcaterService = new NftCharcaterService(this.logger, { nfts })
     for (const nft of nfts) {
       const metadata = await nftCharcaterService.pullNFTDetails(nft.id)
-      const parsedNft = Object.assign({}, nft, { metadata })
+
+      const character = nftCharactersMap[nft.id]
+      let isCharacterExists = false
+      let nftCharacterId
+
+      if (character) {
+        isCharacterExists = true
+        nftCharacterId = character.id
+      }
+
+      const parsedNft = Object.assign({}, nft, { metadata, isCharacterExists, nftCharacterId })
       parsedNfts.push(parsedNft)
     }
 

@@ -27,13 +27,14 @@
     "common-backend-js": "0.1.11",
     "dotenv": "^4.0.0",
     "ethers": "^5.5.4",
-    "openai": "^3.1.0",
     "langchain": "^0.0.11",
     "lodash.clonedeep": "^4.5.0",
+    "lodash.keyby": "^4.6.0",
     "lodash.uppercase": "^4.3.0",
     "mongoose": "^6.4.3",
     "node-fetch": "2.6.7",
     "non-fungible-token-abi": "^1.0.1",
+    "openai": "^3.1.0",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {

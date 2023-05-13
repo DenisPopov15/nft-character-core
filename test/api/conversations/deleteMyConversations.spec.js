@@ -12,8 +12,9 @@ const auth = createAuth(createdBy, userRole, testContext)
 
 describe('deleteMyConversations', async () => {
   it('deleteMyConversations (204)', async () => {
-    const conversation = await factory.create('Conversation', { createdBy })
-    const { nftCharacterId } = conversation
+    const nftCharacter = await factory.create('NftCharacter', { createdBy })
+    const nftCharacterId = nftCharacter.id
+    await factory.create('Conversation', { createdBy, nftCharacterId })
 
     const endpoint = '/api/deleteMyConversations'
 
