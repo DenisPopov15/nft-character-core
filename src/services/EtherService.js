@@ -32,7 +32,7 @@ class EtherService {
 
     for (const tokenId of tokenIds) {
       const metadataUrl = `${baseUri}${tokenId}`
-      nfts.push({ id: tokenId, url: metadataUrl })
+      nfts.push({ id: `${tokenId}`, url: metadataUrl })
     }
 
     return nfts
