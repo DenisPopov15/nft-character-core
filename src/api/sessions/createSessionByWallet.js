@@ -8,6 +8,7 @@ const createAuth     = require('../../helpers/createAuth')
 const OperationError = require('../../OperationError')
 
 const EtherService = require('../../services/EtherService')
+const NftCharcaterService = require('../../services/NftCharcaterService')
 
 const { LOGIN_PAYLOAD, systemAdmin, user: userRole } = require('../../helpers/const')
 let { SYSTEM_ADMIN_ADDRESSES } = process.env
@@ -57,10 +58,18 @@ class CreateSessionByWallet extends Create {
     }
 
     const nfts = await this._validateIfAddressOwnTokens(walletAddress, nftCollectionAddress)
+    const parsedNfts = []
+    const nftCharcaterService = new NftCharcaterService(this.logger, { nfts })
+    for (const nft of nfts) {
+      const metadata = await nftCharcaterService.pullNFTDetails(nft.id)
+      const parsedNft = Object.assign({}, nft, { metadata })
+      parsedNfts.push(parsedNft)
+    }
 
     this._userScope = {
       nftCollectionAddress,
-      nfts
+      nfts,
+      parsedNfts
     }
 
     this._walletAddress = walletAddress
@@ -68,7 +77,7 @@ class CreateSessionByWallet extends Create {
 
   async action() {
     // const { id: sessionId } = this.Model('Session').create({ userId: this._userId })
-    const { nftCollectionAddress, nfts } = this._userScope
+    const { nftCollectionAddress, nfts, parsedNfts } = this._userScope
 
     let role = userRole
     if (SYSTEM_ADMIN_ADDRESSES.includes(this._walletAddress)) {
@@ -77,7 +86,7 @@ class CreateSessionByWallet extends Create {
 
     const sessionId = uuid()
     const token = createAuth(this._walletAddress, role, { nftCollectionAddress, nfts, sessionId })
-    this.object = { token, nfts }
+    this.object = { token, nfts: parsedNfts }
   }
 }
 

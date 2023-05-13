@@ -11,6 +11,6 @@ definitions:
       nfts:
         type: 'array'
         items:
-          $ref: '#/definitions/NFTMetadata'
+          $ref: '#/definitions/NFTObject'
         description: >-
           User auth session token.

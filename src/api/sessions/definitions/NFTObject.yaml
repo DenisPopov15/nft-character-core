@@ -1,0 +1,17 @@
+definitions:
+  NFTObject:
+    type: object
+
+    properties:
+      id:
+        type: string
+        description: >-
+          Id of NFT.
+
+      url:
+        type: string
+        description: >-
+          NFT metadata url.
+
+      metadata:
+        $ref: "#/definitions/NFTMetadata"

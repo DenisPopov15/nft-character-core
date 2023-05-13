@@ -3,12 +3,18 @@ definitions:
     type: object
 
     properties:
-      id:
+      name:
         type: string
-        description: >-
-          Id of NFT.
 
-      url:
+      description:
+        type: string
+
+      image:
         type: string
         description: >-
-          NFT metadata url.
+          NFT image url.
+
+      attributes:
+        type: 'array'
+        items:
+          $ref: '#/definitions/NFTMetadataAttribute'

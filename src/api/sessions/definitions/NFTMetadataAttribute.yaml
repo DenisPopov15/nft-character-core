@@ -1,0 +1,10 @@
+definitions:
+  NFTMetadataAttribute:
+    type: object
+
+    properties:
+      value:
+        type: string
+
+      trait_type:
+        type: string
