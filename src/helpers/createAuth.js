@@ -1,7 +1,7 @@
 'use strict'
 
 const jwt = require('jsonwebtoken')
-const DEFAULT_EXP_IN_SECONDS = 60
+const DEFAULT_EXP_IN_SECONDS = 60 * 15
 let { SERVICE_PRIVATE_KEY } = process.env
 const { authIssuer, authAudience } = require('./const')
 
