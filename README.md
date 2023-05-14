@@ -17,6 +17,10 @@ character context, memory, etc.
 
 ![](docs/ChatNFT-User-Journey.jpg)
 
+## DEMO
+
+[3 minutes demo video](https://www.loom.com/share/12cced9c83b54f28b45e010a12bfa8a1)
+
 ## Swagger Api Docs:
 Start server and check:
 ```
